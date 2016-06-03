@@ -1,0 +1,6 @@
+
+
+ab -n 1000 -c 50 -g normal.data https://127.0.0.1/
+
+cat normal.data | awk -F'\t' '{print $5}' | sort -n | grep -v 'ttime' | cdf > normal.data.cdf
+cat ddos.data | awk -F'\t' '{print $5}' | sort -n | grep -v 'ttime' | cdf > ddos.data.cdf
